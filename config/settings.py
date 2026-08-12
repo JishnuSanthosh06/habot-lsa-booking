@@ -10,9 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
-from pathlib import Path
-
 import os
+from pathlib import Path
 from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,13 +26,10 @@ load_dotenv(BASE_DIR / ".env")
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # django-insecure-t&x8##@wj#9slncb&b9v7%^(8*a7f4u!hbf7bg)#g@(hcqv*4i'
-SECRET_KEY = SECRET_KEY = os.getenv(
-    "django-insecure-t&x8##@wj#9slncb&b9v7%^(8*a7f4u!hbf7bg)#g@(hcqv*4i",
-    "django-insecure-local-development-key-change-this"
-)
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False") == "True"
+DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
 ALLOWED_HOSTS = []
 
